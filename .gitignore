@@ -114,10 +114,6 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
-video.py
-common.py
-tst_scene_render.py
-
 # SageMath parsed files
 *.sage.py
 
