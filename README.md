@@ -111,4 +111,33 @@
   ~/Desktop/opencvtemp/opencv-4.1.2/build$
   cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local  -D WITH_TBB=OFF -D WITH_IPP=OFF -D WITH_1394=OFF -D BUILD_WITH_DEBUG_INFO=OFF -D BUILD_DOCS=OFF -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D ENABLE_NEON=ON -D ENABLE_VFPV3=ON -D WITH_QT=OFF -D WITH_GTK=ON -D WITH_OPENGL=ON -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.1.2/modules -D WITH_V4L=ON -D WITH_FFMPEG=ON -D WITH_XINE=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D BUILD_NEW_PYTHON_SUPPORT=ON -D OPENCV_GENERATE_PKGCONFIG=ON ../
 
+  // 컴파일 시 메모리 부족으로 에러가 나지 않도록 swap 공간을 늘려줘야 한다.
+
+  // /etc/dphys-swapfile 파일을 연다
+  ~/Desktop/opencvtemp/opencv-4.1.2/build $ sudo vim /etc/dphys-swapfile
+
+  // 변경
+  CONF_SWAPSIZE=2048
+
+  // swap을 재시작하여 변경된 설정값을 반영해준다.
+  sudo /etc/init.d/dphys-swapfile restart
+
+
+  ~/Desktop/opencvtemp/opencv-4.1.2/build $ make -j4
+
+  sudo make install
+  sudo ldconfig
+  ```
+
+  - 자 이제 여기까지 했으면 이제 import cv2 가 작동된다.
+  - CONF_SWAPSIZE를 100MB로 재설정,  스왑 서비스를 재시작
+
+  sudo vim /etc/dphys-swapfile
+  sudo /etc/init.d/dphys-swapfile restart
+
+  - 하지만, 이것은 전역에 설치된 것일 뿐 가상환경에 넣어줘야 함. OpenCV 4를 Python 3 가상 환경에 복사(소프트링크)
+  - 소프트링크 옵션 (-s)
+  - 원본 파일 위치 /usr/local/lib/python3.7/site-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so
+  - 복사할 이름 cv2.so
+
   ```
