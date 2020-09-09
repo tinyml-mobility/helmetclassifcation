@@ -4,7 +4,7 @@
 
 ## 1. Raspberry Pi 설치
 
-
+- [라즈베리파이 OS 설치 이미지 다운로드](https://www.raspberrypi.org/downloads/)
 
 
 
@@ -52,7 +52,6 @@
 
   # 3 가상환경 실행 후, pip를 설치해준다.
   pip3 -r install requirements.txt
-
 
   # ** 가상환경을 끄는 방법도 있다.
   source deactivate
