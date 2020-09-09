@@ -59,14 +59,38 @@
 
   ```
 
+  #### 		Opencv 설치법
 
+  ```bash
+  // 우선 업데이트와 업그레이드 해주기
+  sudo apt-get update
+  sudo apt-get upgrade
 
+  sudo apt-get install build-essential
+  sudo apt-get install cmake
 
+  // 특정 포멧의 이미지 파일을 Read, Write 하기 위한 필요 패키지 설치
+  sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
 
+  // 특정 코덱의 비디오 파일을 Read, Write 하기 위한 필요 패키지 설치
+  sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libxvidcore-dev libx264-dev libxine2-dev
 
+  // Video4Linux  리눅스에서 실시간 비디오 캡처 및 비디오 디바이스 제어를 위한 API 패키지 설치
+  sudo apt-get install libv4l-dev v4l-utils
 
-		#### 		Opencv 설치법
+  // GStreamer는 리눅스 기반에서 영상 스트리밍을 쉽게 처리할 수 있더록 만든 오픈 소스 프레임워크 이다.
+  sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
-```
+  // OpenCV에서 윈도우 생성 등의 GUI를 위해 gtk 또는 qt를 선택해서 사용가능하며 여기서는 gtk2를 지정해준다.
+  sudo apt-get install libgtk2.0-dev
 
-```
+  // OpenGL 지원하기 위해 필요한 라이브러리 설치
+  sudo apt-get install mesa-utils libgl1-mesa-dri libgtkgl2.0-dev libgtkglext1-dev
+
+  // OpenCV 최적화를 위해 사용되는 라이브러리 설치
+  sudo apt-get install libatlas-base-dev gfortran libeigen3-dev
+
+  // python 패키지는 OpenCV-Python 바인딩을 위한 패키지이며, Numpy는 매트릭스 연산등을 빠르게 처리할 수 있다.
+  // 물론 이미 설치되어 있음.
+  sudo apt-get install python3-dev python3-numpy
+  ```
