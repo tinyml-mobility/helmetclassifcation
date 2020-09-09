@@ -29,11 +29,15 @@
   - simpleaudio==1.0.4
   - tflite-runtime @ https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
 
-  ####  ※ requirements.txt에 명시된 Package를 설치하는 방법
+  #### ※ requirements.txt에 명시된 Package를 설치하는 방법
+
+  
 
   ```bash
   pip3 install -r requirements.txt
   ```
+
+
 
 
 
@@ -54,6 +58,8 @@ pip3 -r install requirements.txt
 source deactivate
 
 ```
+
+
 
 
 
