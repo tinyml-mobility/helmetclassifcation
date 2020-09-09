@@ -58,6 +58,26 @@
   source deactivate
 
   ```
+
+  ###   (venv) install tf1.15
+
+  - tf1.15 is latest version of tensorflow 1.xx
+  - tf1.15 만 coral 을 지원함.
+  - 하지만 pip 를 통한 간단한 install 을 linux 에서 지원하지 않음
+
+  ```bash
+  (venv) ~$ sudo apt-get install libhdf5-dev libc-ares-dev libeigen3-dev
+  (venv) ~$ sudo apt-get install libatlas-base-dev libatlas3-base
+  (venv) ~$ pip install h5py
+  (venv) ~$ pip install six
+  (venv) ~$ pip wheel mock
+  (venv) ~$ pip wheel wheel
+  (venv) ~$ wget https://github.com/Qengineering/Tensorflow-Raspberry-Pi/raw/master/tensorflow-1.15.2-cp37-cp37m-linux_armv7l.whl
+  (venv) ~$ pip install tensorflow-1.15.2-cp37-cp37m-linux_armv7l.whl
+
+  // (주의) sudo pip install 명령어 사용시, 전역에 깔려버림.
+  // tensorflow-1.15.2-cp37-cp37m-linux_armv7l.whl 은 root directory 에 다운로드 되어 있으므로 경로 주의할것.
+  ```
   ####    Coral
 
   ```bash
