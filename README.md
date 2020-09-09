@@ -127,7 +127,6 @@
   sudo apt-get install libatlas-base-dev gfortran libeigen3-dev
 
   // python 패키지는 OpenCV-Python 바인딩을 위한 패키지이며, Numpy는 매트릭스 연산등을 빠르게 처리할 수 있다.
-  // 물론 이미 설치되어 있음.
   sudo apt-get install python3-dev python3-numpy
 
   ~/Desktop$ mkdir opencvtemp
@@ -168,10 +167,13 @@
   // CONF_SWAPSIZE를 100MB로 재설정,  스왑 서비스를 재시작
 
   sudo vim /etc/dphys-swapfile
+
+  // 변경
+  CONF_SWAPSIZE=100
+
   sudo /etc/init.d/dphys-swapfile restart
 
-  // 하지만, 이것은 전역에 설치된 것일 뿐 가상환경에 넣어줘야 함. OpenCV 4를 Python 3 가상 환경에 복사(소프트링크)
-  // 소프트링크 옵션 (-s)
+  // 이제 가상환경에 넣어줘야 함. OpenCV 4를 Python 3 가상 환경에 복사(소프트링크 옵션 -s)
   // 원본 파일 위치 /usr/local/lib/python3.7/site-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so
   // 복사할 이름 cv2.so
 
