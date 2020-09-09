@@ -10,7 +10,7 @@
 
 ## 2. 개발 사양 & Packages
 
-- Linux Ubuntu 
+- Linux Ubuntu
 
 - RAM
 
@@ -31,7 +31,7 @@
 
   #### ※ requirements.txt에 명시된 Package를 설치하는 방법
 
-  
+
 
   ```bash
   pip3 install -r requirements.txt
@@ -41,7 +41,7 @@
 
 
 
-#### 		※ 혹시라도 가상환경(Virtual environment) 생성을 모른다면? 
+  #### ※ 혹시라도 가상환경(Virtual environment) 생성을 모른다면?
 
 ```bash
 # 1 코드를 실행 할 디렉토리에 들어가서 venv라는 이름의 가상환경을 생성한다.
@@ -70,10 +70,3 @@ source deactivate
 ```
 
 ```
-
-
-
-
-
-
-
