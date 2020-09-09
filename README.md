@@ -129,15 +129,20 @@
   sudo ldconfig
   ```
 
-  - 자 이제 여기까지 했으면 이제 import cv2 가 작동된다.
+  - 여기까지 했으면 이제 import cv2 가 작동된다.
   - CONF_SWAPSIZE를 100MB로 재설정,  스왑 서비스를 재시작
 
+  ```bash
   sudo vim /etc/dphys-swapfile
   sudo /etc/init.d/dphys-swapfile restart
+  ```
 
   - 하지만, 이것은 전역에 설치된 것일 뿐 가상환경에 넣어줘야 함. OpenCV 4를 Python 3 가상 환경에 복사(소프트링크)
   - 소프트링크 옵션 (-s)
   - 원본 파일 위치 /usr/local/lib/python3.7/site-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so
   - 복사할 이름 cv2.so
 
+  ```bash
+  cd ~/Desktop/tffull_env/lib/python3.7/site-packages
+  ~/Desktop/tffull_env/lib/python3.7/site-packages$ ln -s /usr/local/lib/python3.7/dist-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so cv2.so
   ```
