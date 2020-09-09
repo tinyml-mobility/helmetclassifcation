@@ -41,7 +41,7 @@
 
 
 
-		#### 		※ 혹시라도 가상환경(Virtual environment) 생성을 모른다면? 
+#### 		※ 혹시라도 가상환경(Virtual environment) 생성을 모른다면? 
 
 ```bash
 # 1 코드를 실행 할 디렉토리에 들어가서 venv라는 이름의 가상환경을 생성한다.
