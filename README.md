@@ -11,7 +11,7 @@
 - [balenaetcher 다운로드](https://www.balena.io/etcher/)
 
   ```bash
-  #1 balenaetcher를 실행하여 라즈베리파이에 넣을 sd카드에 이미지를 씌운다.
+  #1 balenaetcher를 실행하여 라즈베리파이에 넣을 sd카드에 이미지를 씌운다.(sd카드에 flash만 해주면 됨)
   
   #2 sd카드를 라즈베리파이에 넣은 후 라즈베리파이를 부팅한다.
 
