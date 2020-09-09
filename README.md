@@ -93,4 +93,22 @@
   // python 패키지는 OpenCV-Python 바인딩을 위한 패키지이며, Numpy는 매트릭스 연산등을 빠르게 처리할 수 있다.
   // 물론 이미 설치되어 있음.
   sudo apt-get install python3-dev python3-numpy
+
+  ~/Desktop$ mkdir opencvtemp
+  ~/Desktop$ cd opencvtemp
+
+  wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.2.zip
+  unzip opencv.zip
+
+  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.2.zip
+  unzip opencv_contrib.zip
+
+
+  ~/Desktop/opencvtemp/$ cd opencv-4.1.2
+  ~/Desktop/opencvtemp/opencv-4.1.2$ mkdir build
+  ~/Desktop/opencvtemp/opencv-4.1.2$ cd build
+
+  ~/Desktop/opencvtemp/opencv-4.1.2/build$
+  cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local  -D WITH_TBB=OFF -D WITH_IPP=OFF -D WITH_1394=OFF -D BUILD_WITH_DEBUG_INFO=OFF -D BUILD_DOCS=OFF -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D ENABLE_NEON=ON -D ENABLE_VFPV3=ON -D WITH_QT=OFF -D WITH_GTK=ON -D WITH_OPENGL=ON -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.1.2/modules -D WITH_V4L=ON -D WITH_FFMPEG=ON -D WITH_XINE=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D BUILD_NEW_PYTHON_SUPPORT=ON -D OPENCV_GENERATE_PKGCONFIG=ON ../
+
   ```
