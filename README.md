@@ -143,6 +143,6 @@
   - 복사할 이름 cv2.so
 
   ```bash
-  cd ~/Desktop/tffull_env/lib/python3.7/site-packages
-  ~/Desktop/tffull_env/lib/python3.7/site-packages$ ln -s /usr/local/lib/python3.7/dist-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so cv2.so
+  cd ~/Desktop/venv/lib/python3.7/site-packages
+  ~/Desktop/venv/lib/python3.7/site-packages$ ln -s /usr/local/lib/python3.7/dist-packages/cv2/python-3.7/cv2.cpython-37m-arm-linux-gnueabihf.so cv2.so
   ```
