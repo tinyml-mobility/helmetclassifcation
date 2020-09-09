@@ -20,21 +20,23 @@
 
 ## 2. 개발 사양 & Packages
 
-- OS : Raspbian Linux
+  #### 개발 환경 및 부품
 
-- Raspberry Pi Model : Raspberry Pi 4 B 1GB RAM
+  - OS : Raspbian Linux
 
-- Memory : 32GB sd card
+  - Raspberry Pi Model : Raspberry Pi 4 B 1GB RAM
 
-- Camera : RPI NOIR CAMERA BOARD
+  - Memory : 32GB sd card
 
-- Speaker : LeadSound F10 portable speaker
+  - Camera : RPI NOIR CAMERA BOARD
 
-- Accelerator : coral USB accelerator
+  - Speaker : LeadSound F10 portable speaker
 
-- python 3.7 higher 버전이 필요
+  - Accelerator : coral USB accelerator
 
-- Packages Install
+  - python 3.7 higher 버전이 필요
+
+  - Packages Install
 
   #### 설치 Package list
 
