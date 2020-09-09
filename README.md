@@ -43,21 +43,21 @@
 
   #### ※ 혹시라도 가상환경(Virtual environment) 생성을 모른다면?
 
-```bash
-# 1 코드를 실행 할 디렉토리에 들어가서 venv라는 이름의 가상환경을 생성한다.
-python3 -m venv venv
+  ```bash
+  # 1 코드를 실행 할 디렉토리에 들어가서 venv라는 이름의 가상환경을 생성한다.
+  python3 -m venv venv
 
-# 2 가상환경을 실행시켜준다.
-(디렉토리에 들어갔다는 가정) source bin/activate
+  # 2 가상환경을 실행시켜준다.
+  (디렉토리에 들어갔다는 가정) source bin/activate
 
-# 3 가상환경 실행 후, pip를 설치해준다.
-pip3 -r install requirements.txt
+  # 3 가상환경 실행 후, pip를 설치해준다.
+  pip3 -r install requirements.txt
 
 
-# ** 가상환경을 끄는 방법도 있다.
-source deactivate
+  # ** 가상환경을 끄는 방법도 있다.
+  source deactivate
 
-```
+  ```
 
 
 
