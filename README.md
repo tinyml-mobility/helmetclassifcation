@@ -66,13 +66,11 @@
   curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
   sudo apt-get update
-  ```
 
-  - USB 가 꽂혀 있으면 우선 다시 뽑아야 함
-  - 이미 꽂힌 채로 아래 커맨드를 수행할 시 제거 후 재설치
-  - 아래 커맨드는 둘 중 하나 선택.
+  // USB 가 꽂혀 있으면 우선 다시 뽑아야 함
+  // 이미 꽂힌 채로 아래 커맨드를 수행할 시 제거 후 재설치
+  // 아래 커맨드는 둘 중 하나 선택.
 
-  ```bash
   sudo apt-get install libedgetpu1-std
   sudo apt-get install libedgetpu1-max
   ```
