@@ -144,4 +144,4 @@
 ## 3. Reference
 
 - [facedetection](https://github.com/opencv/opencv/tree/master/samples/python) -> facedetect.py
-- [helmet classification](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/raspberry_pi)
+- [image classification](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/raspberry_pi)
