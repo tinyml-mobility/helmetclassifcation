@@ -157,7 +157,7 @@
 2. Rasbberry Pi 내부에 command창을 켜,  ~/opencv4/samples/python 디렉토리로 cd해준다.
 3. 그 후 가상환경을 만든다
 4. 가상환경을 만든 뒤, 위에 나와있는 package들을 설치해준다
-5. 패키치 설치가 완료되면 이 repository(지금 readme가 있는 repository) git clone한다.
+5. 패키치 설치가 완료되면 이 [helmet classification repository](https://github.com/tinyml-mobility/helmetclassifcation)  git clone한다.
 6. python helmetclassification.py를 실행시킨다!
 
 
