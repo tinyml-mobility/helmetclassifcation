@@ -1,8 +1,10 @@
-# TFLITE 모빌리티팀
+# TFLITE 헬멧감지기
+
+ ##### - by 오픈소스 컨트리뷰톤 Tensorflow Lite for Microcontroller - Mobility팀
 
 
 
-## 1. Raspberry Pi 설치
+## 1. Raspberry Pi에 OS 설치 (Raspbian)
 
 이미지 및 balenaetcher를 개발환경에 맞게 다운로드
 
@@ -100,10 +102,15 @@
   #### 		Opencv 설치법
 
   ```bash
-  // 우선 업데이트와 업그레이드 해주기
+  //https://webnautes.tistory.com/916 사이트 참고하시면 됩니다!
+  
+  1. OpenCV 컴파일 전 필요한 패키지 설치
+  
+  // 우선 기존에 패키치 리스트를 업데이트합니다.
   sudo apt-get update
   sudo apt-get upgrade
-
+  
+  // OpenCV 컴파일 전 필요한 패키지 설치
   sudo apt-get install build-essential
   sudo apt-get install cmake
 
@@ -128,20 +135,35 @@
   // OpenCV 최적화를 위해 사용되는 라이브러리 설치
   sudo apt-get install libatlas-base-dev gfortran libeigen3-dev
 
-  // python 패키지는 OpenCV-Python 바인딩을 위한 패키지이며, Numpy는 매트릭스 연산등을 빠르게 처리할 수 있다.
-  sudo apt-get install python3-dev python3-numpy
-
-  ~/Desktop$ mkdir opencvtemp
-  ~/Desktop$ cd opencvtemp
-
+  2. OpenCV 설정과 컴파일 및 설치
+  ~/$ mkdir opencv
+  ~/$ cd opencv
+ 
+  // OpenCV 4.1.2 소스코드 다운로드
   wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.2.zip
   unzip opencv.zip
+  
+  // opencv_contrib(extra modules) 소스코드를 다운로드 받아 압축을 풀어줍니다.
+  $ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.2.zip
+  $ unzip opencv_contrib.zip
 
-  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.2.zip
-  unzip opencv_contrib.zip
   ```
 
-## 3. Reference
 
-- [facedetection](https://github.com/opencv/opencv/tree/master/samples/python) -> facedetect.py
-- [image classification](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/raspberry_pi)
+
+## 3. 실행방법
+
+1. (위에 나와있는 설치법대로) RasberryPi, Coral, Opencv를 설치한다.
+2. Rasbberry Pi 내부에 command창을 켜,  ~/opencv4/samples/python 디렉토리로 cd해준다.
+3. 그 후 가상환경을 만든다
+4. 가상환경을 만든 뒤, 위에 나와있는 package들을 설치해준다
+5. 패키치 설치가 완료되면 이 repository(지금 readme가 있는 repository) git clone한다.
+6. python helmetclassification.py를 실행시킨다!
+
+
+
+## 4. Reference
+
+- face detection 코드 참고: [facedetection](https://github.com/opencv/opencv/tree/master/samples/python) -> facedetect.py
+- image classification 코드 참고: [image classification](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/raspberry_pi)
+- OpenCV설치: https://webnautes.tistory.com/916
