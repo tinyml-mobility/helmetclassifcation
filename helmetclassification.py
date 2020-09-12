@@ -1,7 +1,7 @@
 from PIL import Image
 from tflite_runtime.interpreter import Interpreter
 from tflite_runtime.interpreter import load_delegate
-from video import create_capture
+from video import create_capture # local file video.py
 
 import numpy as np
 import cv2 as cv
@@ -11,14 +11,14 @@ import simpleaudio as sa
 
 
 
-# tf model upload
+# TF model upload
 
 def load_labels(path):
   with open(path, 'r') as f:
     return {i: line.strip() for i, line in enumerate(f.readlines())}
 
 
-
+# Setting input tensor
 def set_input_tensor(interpreter, image):
   tensor_index = interpreter.get_input_details()[0]['index']
   input_tensor = interpreter.tensor(tensor_index)()[0]
@@ -57,13 +57,15 @@ def detect(img, cascade):
     rects[:,2:] += rects[:,:2]
     return rects
 
-
+# Main function which will be implemented when running this file
 def main():
     import sys, getopt
     checknum = 0
     while True:
         try:
+
           # face recognizing code
+
           print('face camera ')
           args, video_src = getopt.getopt(sys.argv[1:2], '', ['cascade=', 'nested-cascade='])
           try:
@@ -85,7 +87,7 @@ def main():
               vis = img.copy()
               if len(rects):
                   if not nested.empty():
-                      print('into nested') # 사람이 들어왔을 때
+                      print('into nested')
                       for x1, y1, x2, y2 in rects:
                           roi = gray[y1:y2, x1:x2]
                           vis_roi = vis[y1:y2, x1:x2]
@@ -102,16 +104,18 @@ def main():
                           break
 
           cam.release() # face recognition camera off
-          print("helmet camera")
+         
 
 
 					# helmet detectecting code
+          print("helmet camera")
+          # load wav file 
           filename = 'helmet.wav'
           wave_obj = sa.WaveObject.from_wave_file(filename)
           helmetok = 'helmetok.wav'
           wave = sa.WaveObject.from_wave_file(helmetok)
 
-
+          # load model & label for classifying
           labels = "labels.txt"
           model = "model_edgetpu.tflite"
           interpreter = Interpreter(model, experimental_delegates=[load_delegate('libedgetpu.so.1.0')])
@@ -128,8 +132,6 @@ def main():
                       stream.seek(0)
                       image = Image.open(stream).convert('RGB').resize((width, height),Image.ANTIALIAS)
                       results = classify_image(interpreter, image)
-                      print("result:")
-                      print(results)
                       stream.seek(0)
                       stream.truncate()
 
@@ -139,6 +141,7 @@ def main():
                           play_obj.wait_done()
                           checknum += 1
 
+                          # Unless User does not wear helmet in three time of checking, the code will go backward
                           if checknum==3:
                               checknum = 0
                               break
@@ -151,7 +154,9 @@ def main():
 
               finally:
                   camera.stop_preview()
+        
 
+        # If you want to interrupt the code running, then press Ctrl + C
         except KeyboardInterrupt:
             break
 
